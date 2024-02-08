@@ -9,6 +9,9 @@ function setReceivedCelcius(celcius){
 function getRecievedCelcius(){
     return recievedCelcius;
 }
+
+
+
 function networkTransmitStub(celcius) {
     if(!isActive){
         console.log('Transmission failure')

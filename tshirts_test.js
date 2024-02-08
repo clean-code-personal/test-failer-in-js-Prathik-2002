@@ -1,5 +1,5 @@
 const {expect} = require('chai');
-const {size} = require('./tshirts.js')
+const {size} = require('./tshirts')
 
 expect(size(37)).equals('S'); 
 expect(size(38)).equals('S'); //38 is a size "S"

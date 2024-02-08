@@ -1,5 +1,5 @@
 const {getTransmissionFailureCount, transmitInCelcius} = require("./transmitter")
-const {setIsActive, setReceivedCelcius, getRecievedCelcius}  = require("./stub")
+const {setIsActive, getRecievedCelcius}  = require("./stub")
 const {expect} = require("chai")
 
 setIsActive(true)
