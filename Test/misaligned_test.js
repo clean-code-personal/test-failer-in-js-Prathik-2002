@@ -1,5 +1,5 @@
 const {expect} = require('chai')
-const {getcolor_map, getcolor_map_string, print_color_map} = require("./misaligned");;
+const {getcolor_map, getcolor_map_string, print_color_map} = require("../misaligned");;
 function testPairNumberColorPair(pairNumber, majorColor, minorColor){
     if(pairNumber<1 || pairNumber>25){
         return false

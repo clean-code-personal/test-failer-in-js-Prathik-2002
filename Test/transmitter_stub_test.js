@@ -1,4 +1,4 @@
-const {getTransmissionFailureCount, setNetworkTransmit, transmitInCelcius} = require("./transmitter")
+const {getTransmissionFailureCount, setNetworkTransmit, transmitInCelcius} = require("../transmitter")
 const {networkTransmitStub, setIsActive, getRecievedCelcius}  = require("./stub")
 const {expect} = require("chai")
 function testCelciusValue(actual, expected, precision){
