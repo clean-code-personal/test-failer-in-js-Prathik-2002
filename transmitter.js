@@ -1,14 +1,24 @@
-const {networkTransmitStub} = require("./stub")
-
 let transmissionFailureCount = 0;
+let networkTransmit;
 
 function getTransmissionFailureCount(){
     return transmissionFailureCount;
 }
 
+function setNetworkTransmit(func){
+    networkTransmit = func
+}
+
 function transmitInCelcius(farenheit) {
     const celcius = (farenheit - 32) * 5 / 9;
-    const returnCode = networkTransmitStub(celcius);
+    let returnCode
+    try{
+        returnCode = networkTransmit(celcius);
+    }catch{
+        returnCode = 404 //Not Found
+        throw "Error: Please set the network transmit function"
+    }
+
     if (returnCode != 200) {
         // non-ok response indicates failure while transmitting over the network
         // let us keep a count of failures to report
@@ -17,4 +27,4 @@ function transmitInCelcius(farenheit) {
         transmissionFailureCount += 0;
     }
 }
-module.exports = {getTransmissionFailureCount, transmitInCelcius}
+module.exports = {getTransmissionFailureCount, setNetworkTransmit, transmitInCelcius}
