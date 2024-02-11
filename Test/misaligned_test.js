@@ -6,7 +6,7 @@ function testPairNumberColorPair(pairNumber, majorColor, minorColor){
     }
     const majorColors = ["White", "Red", "Black", "Yellow", "Violet"];
     const minorColors = ["Blue", "Orange", "Green", "Brown", "Slate"];
-    if(majorColor == majorColors[(pairNumber - 1)/ majorColors.length] && minorColor == minorColors[(pairNumber - 1)% minorColors.length]){
+    if((majorColor == (majorColors[parseInt((pairNumber - 1) / majorColors.length)])) & (minorColor == (minorColors[(pairNumber - 1) % minorColors.length]))){
         return true
     }
     return false
