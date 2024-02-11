@@ -24,7 +24,7 @@ function transmitInCelcius(farenheit) {
         // let us keep a count of failures to report
         // However, this code doesn't increment failures - that's a bug!
         // Add a test below to catch this bug. Alter the stub above, if needed.
-        transmissionFailureCount += 0;
+        transmissionFailureCount += 1;
     }
 }
 module.exports = {getTransmissionFailureCount, setNetworkTransmit, transmitInCelcius}
