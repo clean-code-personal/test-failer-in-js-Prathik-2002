@@ -9,11 +9,15 @@ function getcolor_map(){
 function print_color_map() {
     const majorColors = ["White", "Red", "Black", "Yellow", "Violet"];
     const minorColors = ["Blue", "Orange", "Green", "Brown", "Slate"];
+    let minor_majorColorSpacing =  majorColors.reduce((a, b) => {
+            return a.length > b.length ? a : b; //finds longest string in the list
+        }).length + 1;
+    let pairNumberSpacing = String(minorColors.length * majorColors.length).length + 1
     for (let i = 0; i < majorColors.length; i++) {
         for (let j = 0; j < minorColors.length; j++) {
-            const colorPairnumberColorPair = {"paiNumber":(i * 5 + j),"majorColor":majorColors[i],"minorColor":minorColors[j]}
-            color_map_string.push(`${colorPairnumberColorPair.paiNumber} | ${colorPairnumberColorPair.majorColor} | ${colorPairnumberColorPair.minorColor}`)
-            color_map.push(colorPairnumberColorPair)
+            const PairnumberColorPair = {"pairNumber":(i * 5 + j + 1),"majorColor":majorColors[i],"minorColor":minorColors[j]}
+            color_map_string.push(String(PairnumberColorPair.pairNumber).padEnd(pairNumberSpacing) + "| " + (PairnumberColorPair.majorColor).padEnd(minor_majorColorSpacing) + "| " + (PairnumberColorPair.minorColor).padEnd( minor_majorColorSpacing))
+            color_map.push(PairnumberColorPair)
         }
     }
     console.log(color_map_string.join("\n"))
